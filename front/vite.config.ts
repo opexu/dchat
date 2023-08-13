@@ -9,6 +9,10 @@ export default defineConfig({
     plugins: [
         vue(),
     ],
+    build: {
+        outDir: 'dist',
+    },
+    base: ((process.env.GITHUB_REPOSITORY ?? "") + "/").match(/(\/.*)/)?.[1],
     root: path.resolve(__dirname, 'src'),
     server: {
         port: 3000,
